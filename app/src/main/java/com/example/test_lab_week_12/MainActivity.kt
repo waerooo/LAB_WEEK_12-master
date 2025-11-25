@@ -7,7 +7,6 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.RecyclerView
 import com.example.test_lab_week_12.viewmodel.MovieViewModel
 import com.google.android.material.snackbar.Snackbar
-import java.util.Calendar
 import com.example.test_lab_week_12.model.Movie
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
@@ -48,15 +47,7 @@ class MainActivity : AppCompatActivity() {
             repeatOnLifecycle(Lifecycle.State.STARTED) {
                 launch {
                     movieViewModel.popularMovies.collect { popularMovies ->
-                        val currentYear =
-                            Calendar.getInstance().get(Calendar.YEAR).toString()
-                        movieAdapter.addMovies(
-                            popularMovies
-                                .filter { movie ->
-                                    movie.releaseDate?.startsWith(currentYear) == true
-                                }
-                                .sortedByDescending { it.popularity }
-                        )
+                        movieAdapter.addMovies(popularMovies)
                     }
                 }
                 launch {
