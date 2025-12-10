@@ -1,14 +1,13 @@
-package com.example.test_lab_week_12.viewmodel
+package com.example.lab_week_13.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.test_lab_week_12.data.MovieRepository
-import com.example.test_lab_week_12.model.Movie
+import com.example.lab_week_13.data.MovieRepository
+import com.example.lab_week_13.model.Movie
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.catch
-import kotlinx.coroutines.flow.filter
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.launch
 import java.util.Calendar

@@ -1,4 +1,4 @@
-package com.example.test_lab_week_12
+package com.example.lab_week_13
 
 import android.os.Bundle
 import android.widget.ImageView
@@ -6,9 +6,8 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import com.bumptech.glide.Glide
-import com.example.test_lab_week_12.model.MovieDetails
-import com.example.test_lab_week_12.viewmodel.DetailsViewModel
-import com.example.test_lab_week_12.viewmodel.DetailsViewModel.Companion.Factory
+import com.example.lab_week_13.model.MovieDetails
+import com.example.lab_week_13.viewmodel.DetailsViewModel
 
 class DetailsActivity : AppCompatActivity() {
 

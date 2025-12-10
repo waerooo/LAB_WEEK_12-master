@@ -1,13 +1,13 @@
-package com.example.test_lab_week_12
+package com.example.lab_week_13
 
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.RecyclerView
-import com.example.test_lab_week_12.viewmodel.MovieViewModel
+import com.example.lab_week_13.viewmodel.MovieViewModel
 import com.google.android.material.snackbar.Snackbar
-import com.example.test_lab_week_12.model.Movie
+import com.example.lab_week_13.model.Movie
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle

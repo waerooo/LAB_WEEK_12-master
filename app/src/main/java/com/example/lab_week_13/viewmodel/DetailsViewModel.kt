@@ -1,12 +1,12 @@
-package com.example.test_lab_week_12.viewmodel
+package com.example.lab_week_13.viewmodel
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.viewModelScope
-import com.example.test_lab_week_12.data.MovieRepository
-import com.example.test_lab_week_12.model.MovieDetails
+import com.example.lab_week_13.data.MovieRepository
+import com.example.lab_week_13.model.MovieDetails
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import java.lang.IllegalArgumentException
