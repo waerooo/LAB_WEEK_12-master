@@ -6,23 +6,21 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.RecyclerView
 import com.example.lab_week_13.viewmodel.MovieViewModel
-import com.google.android.material.snackbar.Snackbar
 import com.example.lab_week_13.model.Movie
-import androidx.lifecycle.Lifecycle
-import androidx.lifecycle.lifecycleScope
-import androidx.lifecycle.repeatOnLifecycle
-import kotlinx.coroutines.launch
+import androidx.databinding.DataBindingUtil
+import com.example.lab_week_13.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var movieAdapter: MovieAdapter
-    private lateinit var recyclerView: RecyclerView
+    private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
 
-        recyclerView = findViewById(R.id.movie_list)
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
+
+        val recyclerView: RecyclerView = binding.movieList
 
         movieAdapter = MovieAdapter(
             object : MovieAdapter.MovieClickListener {
@@ -43,22 +41,10 @@ class MainActivity : AppCompatActivity() {
                 }
             })[MovieViewModel::class.java]
 
-        lifecycleScope.launch {
-            repeatOnLifecycle(Lifecycle.State.STARTED) {
-                launch {
-                    movieViewModel.popularMovies.collect { popularMovies ->
-                        movieAdapter.addMovies(popularMovies)
-                    }
-                }
-                launch {
-                    movieViewModel.error.collect { error ->
-                        if (error.isNotEmpty()) Snackbar
-                            .make(
-                                recyclerView, error, Snackbar.LENGTH_LONG
-                            ).show()
-                    }
-                }
-            }
-        }
+        binding.viewModel = movieViewModel
+
+        binding.lifecycleOwner = this
+
+
     }
 }

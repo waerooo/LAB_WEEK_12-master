@@ -11,9 +11,8 @@
         android:name="com.example.lab_week_13.MovieApplication"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.TEST_LAB_WEEK_12">
-        <activity android:name="com.example.lab_week_13.DetailsActivity"
-            android:parentActivityName="com.example.lab_week_13.MainActivity" />
+        android:theme="@style/Theme.LAB_WEEK_13"> <activity android:name="com.example.lab_week_13.DetailsActivity"
+        android:parentActivityName="com.example.lab_week_13.MainActivity" />
         <activity android:name="com.example.lab_week_13.MainActivity"
             android:exported="true">
             <intent-filter>
